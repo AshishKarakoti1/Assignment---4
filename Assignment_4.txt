@@ -1,0 +1,29 @@
+1. use university
+
+2. db.createCollection("studentsData")
+
+3. db.studentsData.insertMany([
+	{"name":"Ashish","age":20,"grade":"A"},
+	{"name":"Avikam","age":19,"grade":"A"},
+	{"name":"Daksh","age":20,"grade":"O"},
+	{"name":"John","age":18,"grade":"B"},
+	{"name":"Emily","age":21,"grade":"B"}
+   ])
+
+4. db.studentsData.find()
+
+5. db.studentsData.find({"age": { $gt : 19}})
+
+6. db.studentsData.updateOne({"name":"John"},{$set: {"grade": "A"}})
+
+10. db.studentsData.deleteOne({name:"Emily"})
+
+11. db.studentsData.find({},{name:true,grade:true})
+
+12. db.studentsData.find().sort({name:1})
+
+13. db.studentsData.countDocuments({grade:"A"})
+
+15. db.studentsData.find().sort({age:-1})
+
+16. db.studentsData.find({age: {$gt:18}})
