@@ -1,0 +1,85 @@
+1. db.createCollection("Employees")
+
+2. db.Employees.insertMany([
+	{name: "John Doe", age:30, experience:5, department:"CSE"},
+	{name: "Alice", age:25, experience:6, department:"BBA"},
+	{name: "Bob", age:35, experience:8, department:"CSE"},
+	{name:"Rob", age:60, experience:30, department:"CSE"}
+   ])   
+
+3. db.Employees.find({$or:[{age:{$gt:30}},{experience:{$gt:5}}]})
+
+4. db.createCollection("Products")
+
+5. db.Products.insertMany([{product_name:"Sabun", stock:500, price:20},{product},{},{}])
+
+6. db.Products.insertMany([
+	{product_name:"Sabun", stock:500, price:20},
+	{product_name:"Oil", stock:200, price:100},
+	{product_name:"Brush", stock:300, price:100},
+	{name:"Paper", stock:600, price:1}
+   ])
+
+7. db.products.find({$and:[{stock:{$gt:0}, price:{$lt:50}}]})
+
+8. db.createCollection("studentsassign")
+
+9. db.studentsassign.insertMany([
+	{name:"Tony", enrolled:true, grade:"C"},
+	{name: "Donald", enrolled:true, grade:"B"},
+	{name:"Kamala", enrolled:false, grade:"F"},
+	{name:"Biden", enrolled:false, grade:"F"}
+   ])
+
+10. db.studentsassign.find({$or:[{ enrolled: false}, {grade: {$lt : "C"}}]})    
+
+
+11. db.createCollection("courses")
+
+12. db.courses.insertMany([{instructor:"David", duration:6},{instructor:"Hagrid",duration:8},{instructor:"Dumble", duration:3}])
+
+13. db.courses.find({$or:[{{duration: {$lt:6}}, {instructor:{$exists: false}}]})
+
+14. db.orders.insertMany([
+	{order_id:1, status: "shipped", shipped_date:29},
+	{order_id:5, status:"not shipped", shipped_date:null},
+	{order_id:9, status:"shipped", shipped_date:25}
+    ])       
+
+15. db.orders.find({$or:[{status: {$ne: "shipped" }}, {shipped_date: {$exists: false}}]})
+
+16. db.createCollection("naukar")
+
+17. db.createCollection("naukar")
+
+18. db.naukar.insertMany([{name:"Ramesh", dept:"Engineering"}, {name:"Suresh", dept:"IT"}, {name:"Rakesh", dept:""}])
+
+19. db.naukar.find({department:{$nin:["Engineering", "IT"]}}, {name: 1, department: 1})
+
+20. db.createCollection("Bacche")
+
+21. db.Bacche.insertMany([
+	{name:"Henry", score:70, participate:false},
+	{name:"Barry", score:60, participate:true},
+	{name:"Bhargav", score:100, participate:false}
+    ])
+
+22. db.Bacche.find({exam_score: {$lt: 50}, participate: false})
+
+23. db.createCollection("StillNaukar")
+
+24. db.StillNaukar.insertMany([
+	{department:"Sales", exp:25, age:55},
+	{department:"Sales", exp:7, age:27},
+	{department:"IT", exp:2, age:24}
+    ])
+
+25. db.StillNaukar.find({department:"Sales", $or:[{exp:{$gt:3}}, {age:{$lt:25}}]})
+
+26. db.createCollection("inventory")
+
+27. db.inventory.insertMany([{price:200, stock:null},{price:70, stock:300},{price:300, stock:400}]){e:300, stock:400}])
+
+28. db.inventory.find({$or:[{price:{$lt:100}},{stock:{$exists:false}}]})        
+
+29. db.courses.find({$nor:[{instructor:"John Smith"},{duration:{$gt:10}}]})     
